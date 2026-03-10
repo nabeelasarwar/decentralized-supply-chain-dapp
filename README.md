@@ -3,24 +3,26 @@ This project implements a blockchain-based supply chain solution to solve the pr
 transparency and accountability in the movement of goods. By using a decentralized ledger, 
 every stakeholder can verify the origin, current location, and ownership history of a product 
 without relying on a central authority.
-# Smart Contract Architecture
+## Smart Contract Architecture
 The contract, titled SupplyChain, is built on the Ethereum Virtual Machine (EVM). It uses a 
 combination of State Machines (via Enums) and Append-only Logs (via Mappings and 
 Structs). Contract address is available in contracts folder under src.
-# Detailed Functionality Overview 
-1. Administrative & Creation Functions 
- addProduct(string _name, string _manufacturer): Registers a new physical item on the blockchain. Increments the productCount (which acts as the unique ID), initializes a Product struct, and sets the initial state to Manufacturing. It also creates the first entry in the productHistory array to establish the "Birth" of the product.
-2 Transactional & State Functions 
- updateStage(uint256 _productId, Stage _newStage): Moves the product through its lifecycle. It validates that the caller is the current owner and ensures that the stage only moves forward (e.g., you cannot move a "Delivered" item back to 
-"Manufacturing")
- transferProduct(uint256 _productId, address _newOwner): Handover of responsibility. Updates the owner field in the mapping.
- updateLocation(uint256 _productId, string _newLocation): Real-time tracking. Allows the owner to update the text-based location (e.g., "Suez Canal" or "Warehouse 4"). It adds this specific location update to the permanent history.
-3 Data Retrieval (Read-Only) Functions 
+## Detailed Functionality Overview 
+### 1. Administrative & Creation Functions 
+=> addProduct(string _name, string _manufacturer): Registers a new physical item on the blockchain. Increments the productCount (which acts as the unique ID), initializes a Product struct, and sets the initial state to Manufacturing. It also creates the first entry in the productHistory array to establish the "Birth" of the product.
+### 2 Transactional & State Functions 
+=> updateStage(uint256 _productId, Stage _newStage): Moves the product through its lifecycle. It validates that the caller is the current owner and ensures that the stage only moves forward (e.g., you cannot move a "Delivered" item back to 
+"Manufacturing").
+
+=> transferProduct(uint256 _productId, address _newOwner): Handover of responsibility. Updates the owner field in the mapping.
+
+=> updateLocation(uint256 _productId, string _newLocation): Real-time tracking. Allows the owner to update the text-based location (e.g., "Suez Canal" or "Warehouse 4"). It adds this specific location update to the permanent history.
+### 3 Data Retrieval (Read-Only) Functions 
  getProduct(uint256 _productId): Returns a snapshot of the current status of a product. 
  getProductHistory(uint256 _productId): Returns an array of all updates, showing who changed what and when. 
  getAllProductIds(): Returns a list of all product IDs registered in the system.
-#  Frontend Development & UI Technologies 
-## 1 Framework: React.js 
+##  Frontend Development & UI Technologies 
+### 1 Framework: React.js 
 React.js was chosen as the primary frontend library for building a dynamic and responsive User 
 Interface (UI). 
  Component-Based Architecture: The app is divided into reusable components (e.g., 
@@ -29,7 +31,7 @@ maintain.
  State Management: React handles real-time updates—for example, as soon as a 
 product’s stage is updated on the blockchain, the UI reflects that change without needing 
 a full page refresh. 
-## 2 Blockchain Interaction: Ethers.js 
+### 2 Blockchain Interaction: Ethers.js 
 Ethers.js is the most critical library in this project. It serves as the "translator" between 
 JavaScript and the Smart Contract. 
  Provider & Signer: It connects to the MetaMask provider to read data from the 
@@ -37,7 +39,7 @@ blockchain and uses the "Signer" to authorize transactions (like adding a produc
  Contract Abstraction: By combining the Contract Address and the ABI, Ethers.js 
 creates a JavaScript object that allows us to call Solidity functions like 
 contract.addProduct() directly from our frontend code. 
-## 3 Styling & UX: CSS3 
+### 3 Styling & UX: CSS3 
 Custom CSS was used to ensure the supply chain data is presented in a clean, readable format. 
 7 
  
