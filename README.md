@@ -28,18 +28,20 @@ I used **ethers.js** as the primary library to interact with the Ethereum Blockc
 ### 1 Framework: React.js 
 React.js was chosen as the primary frontend library for building a dynamic and responsive User 
 Interface (UI). 
- Component-Based Architecture: The app is divided into reusable components (e.g., 
+* Component-Based Architecture: The app is divided into reusable components (e.g., 
 "Add Product Form," "Product History List"), making the code organized and easy to 
-maintain. 
- State Management: React handles real-time updates—for example, as soon as a 
+maintain.
+
+* State Management: React handles real-time updates—for example, as soon as a 
 product’s stage is updated on the blockchain, the UI reflects that change without needing 
 a full page refresh. 
 ### 2 Blockchain Interaction: Ethers.js 
 Ethers.js is the most critical library in this project. It serves as the "translator" between 
 JavaScript and the Smart Contract. 
- Provider & Signer: It connects to the MetaMask provider to read data from the 
-blockchain and uses the "Signer" to authorize transactions (like adding a product). 
- Contract Abstraction: By combining the Contract Address and the ABI, Ethers.js 
+* Provider & Signer: It connects to the MetaMask provider to read data from the 
+blockchain and uses the "Signer" to authorize transactions (like adding a product).
+
+* Contract Abstraction: By combining the Contract Address and the ABI, Ethers.js 
 creates a JavaScript object that allows us to call Solidity functions like 
 contract.addProduct() directly from our frontend code. 
 ### 3 Styling & UX: CSS3 
@@ -50,6 +52,22 @@ Custom CSS was used to ensure the supply chain data is presented in a clean, rea
 devices. 
  Visual Cues: Used CSS to distinguish between different stages (e.g., different colors for 
 "Manufacturing," "Shipping," and "Delivered") to enhance the user experience. 
+##  How to Test the DApp (Setup Instructions)
+
+To interact with this Decentralized Supply Chain, follow these steps:
+
+### 1. MetaMask Setup
+* Install the **MetaMask Extension** in your browser.
+* Create a new wallet (and securely save your seed phrase!).
+
+### 2. Connect to Sepolia Testnet
+* In MetaMask, go to **Settings > Advanced** and turn on **"Show test networks"**.
+* Select **Sepolia Test Network** from the network dropdown.
+* You will need some **Sepolia ETH** (Test tokens) to pay for "Gas Fees." You can get these for free from a [Sepolia Faucet](https://sepoliafaucet.com/).
+
+### 3. Monitoring Transactions
+* Every action in this DApp (like adding a product or changing ownership) is a real blockchain transaction.
+* You can copy your **Transaction Hash** or **Contract Address** and paste it into [Etherscan (Sepolia)](https://sepolia.etherscan.io/) to see the live status, gas used, and block confirmation.
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
@@ -66,57 +84,7 @@ Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 The page will reload when you make changes.\
 You may also see any lint errors in the console.
 
-### `npm test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
