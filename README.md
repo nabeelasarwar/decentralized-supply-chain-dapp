@@ -7,6 +7,7 @@ without relying on a central authority.
 The contract, titled SupplyChain, is built on the Ethereum Virtual Machine (EVM). It uses a 
 combination of State Machines (via Enums) and Append-only Logs (via Mappings and 
 Structs). Contract address is available in contracts folder under src.
+I used **ethers.js** as the primary library to interact with the Ethereum Blockchain. It serves as the middleware between the User Interface and the Smart Contracts. 
 ## Detailed Functionality Overview 
 ### 1. Administrative & Creation Functions 
 => addProduct(string _name, string _manufacturer): Registers a new physical item on the blockchain. Increments the productCount (which acts as the unique ID), initializes a Product struct, and sets the initial state to Manufacturing. It also creates the first entry in the productHistory array to establish the "Birth" of the product.
