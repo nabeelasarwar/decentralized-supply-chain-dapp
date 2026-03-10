@@ -18,9 +18,11 @@ Structs). Contract address is available in contracts folder under src.
 
 => updateLocation(uint256 _productId, string _newLocation): Real-time tracking. Allows the owner to update the text-based location (e.g., "Suez Canal" or "Warehouse 4"). It adds this specific location update to the permanent history.
 ### 3 Data Retrieval (Read-Only) Functions 
- getProduct(uint256 _productId): Returns a snapshot of the current status of a product. 
- getProductHistory(uint256 _productId): Returns an array of all updates, showing who changed what and when. 
- getAllProductIds(): Returns a list of all product IDs registered in the system.
+=> getProduct(uint256 _productId): Returns a snapshot of the current status of a product. 
+
+=> getProductHistory(uint256 _productId): Returns an array of all updates, showing who changed what and when. 
+
+=> getAllProductIds(): Returns a list of all product IDs registered in the system.
 ##  Frontend Development & UI Technologies 
 ### 1 Framework: React.js 
 React.js was chosen as the primary frontend library for building a dynamic and responsive User 
